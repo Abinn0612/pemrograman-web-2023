@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kurs Rupiah Tabiin</title>
+
+<style>
+    .container {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.valuta {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.nilai {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.rupiah {
+  width: 200px;
+  margin: 0 auto;
+}
+
+input {
+  width: 100%;
+  height: 30px;
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+button {
+  width: 100px;
+  height: 30px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>Konversi Matauang</h1>
+
+<div class="valuta">
+<select id="valuta">
+<option value="">Pilih Matauang</option>
+<option value="USD">Dolar AS</option>
+<option value="SGD">Dolar Singapura</option>
+<option value="MYR">Ringgit Malaysia</option>
+<option value="JPY">Yen Jepang</option>
+<option value="EUR">Euro</option>
+<option value="SAR">Riyal Arab Saudi</option>
+</select>
+</div>
+
+<div class="nilai">
+<input type="number" id="nilai" placeholder="Nilai Matauang">
+</div>
+
+<div class="rupiah">
+<p id="rupiah">Nilai Rupiah</p>
+</div>
+
+<button id="hitung">Hitung</button>
+
+</div>
+
+<script>
+function konversi() {
+  var nilaiAsing = document.querySelector("#nilai").value;
+
+  var nilaiRupiah = nilaiAsing * kurs[document.querySelector("#valuta").value];
+
+  document.querySelector("#rupiah").innerHTML = nilaiRupiah;
+}
+
+document.querySelector("#hitung").addEventListener("click", konversi);
+
+var kurs = {
+  "USD": 9915,
+  "SGD": 13472,
+  "MYR": 874,
+  "JPY": 120,
+  "EUR": 15888,
+  "SAR": 3592
+};
+
+</script>
+</body>
+</html>

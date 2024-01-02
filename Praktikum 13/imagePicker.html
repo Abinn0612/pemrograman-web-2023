@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Image Picker Tabiin</title>
+
+<style>
+.container {
+    width: 500px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  select {
+    width: 200px;
+    height: 30px;
+  }
+  
+  .gambar-area {
+    width: 200px;
+    margin: 0 auto;
+  }
+  
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>Dropdown Gambar</h1>
+
+<select id="gambar">
+<option value="">Pilih Gambar</option>
+
+<option value="Badak.jpg">Gambar 1</option>
+<option value="Beruang.jpg">Gambar 2</option>
+<option value="Buaya.jpg">Gambar 3</option>
+<option value="Singa.jpg">Gambar 4</option>
+<option value="Tupai.jpg">Gambar 5</option>
+</select>
+
+<div class="gambar-area">
+<img src="" alt="" width="200px">
+</div>
+
+</div>
+
+<script>
+function tampilkanGambar(gambar) {
+  document.querySelector(".gambar-area img").src = gambar;
+}
+
+function tampilkanInformasi(gambar) {
+  alert("Nama file gambar: " + gambar);
+}
+
+document.querySelector("#gambar").addEventListener("change", function() {
+  var gambar = this.value;
+
+  if (gambar != "") {
+    tampilkanGambar(gambar);
+
+    tampilkanInformasi(gambar);
+  }
+});
+
+</script>
+</body>
+</html>
